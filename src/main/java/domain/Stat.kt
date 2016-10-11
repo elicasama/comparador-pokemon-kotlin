@@ -1,4 +1,4 @@
-package collections
+package domain
 
 /**
  * Clase que representa la estadística del [pokemon]

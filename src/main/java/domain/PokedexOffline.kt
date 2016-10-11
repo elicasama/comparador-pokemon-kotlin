@@ -1,6 +1,6 @@
-package collections
+package domain
 
-import collections.Pokemon
+import domain.Pokemon
 import com.google.gson.Gson
 import java.io.BufferedReader
 import java.io.FileReader
@@ -15,7 +15,7 @@ class PokedexOffline()  {
      * Dado un [pokemonName] busca el archivo JSON y retorna un pokemon
      */
     fun getPokemonByName(pokemonName: String): Pokemon {
-        var pokemonBuffer = BufferedReader(FileReader("./src/main/java/collections/$pokemonName.json"))
+        var pokemonBuffer = BufferedReader(FileReader("./src/main/java/JSON/$pokemonName.json"))
         var pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
         return pokemonParseado
     }

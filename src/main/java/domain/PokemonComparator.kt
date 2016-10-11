@@ -1,7 +1,7 @@
 package domain
 
-import collections.PokedexOffline
-import collections.Pokemon
+import domain.PokedexOffline
+import domain.Pokemon
 
 /**
  * La clase recibe los nombres de los pokemon a comparar

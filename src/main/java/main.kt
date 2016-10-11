@@ -1,4 +1,4 @@
-import collections.PokedexOffline
+import domain.PokedexOffline
 import domain.PokemonComparator
 
 fun main(args: Array<String>) {

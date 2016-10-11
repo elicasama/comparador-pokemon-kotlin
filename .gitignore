@@ -1,6 +1,7 @@
 target/classes
 .DS_Store
 .idea/shelf
+.ide/libraries/MAVEN_*
 /android.tests.dependencies
 /confluence/target
 /dependencies
