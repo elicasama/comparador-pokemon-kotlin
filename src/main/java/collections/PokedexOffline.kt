@@ -1,5 +1,6 @@
 package collections
 
+import collections.Pokemon
 import com.google.gson.Gson
 import java.io.BufferedReader
 import java.io.FileReader
@@ -18,6 +19,12 @@ class PokedexOffline()  {
         var pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
         return pokemonParseado
     }
-}
 
+    /**
+     * Devuelve el total de estadísticas del [pokemon]
+     */
+    fun getTotalStat(pokemon: Pokemon): Double {
+         return pokemon.stats.sumByDouble { it.base_stat }
+    }
+}
 
