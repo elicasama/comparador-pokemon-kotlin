@@ -1,9 +1,6 @@
-target/classes
+target
 .DS_Store
-.idea/shelf
-.idea/libraries/MAVEN_*
-.idea/.name
-.idea/misc.xml
+.idea
 /android.tests.dependencies
 /confluence/target
 /dependencies
@@ -26,4 +23,3 @@ ultimate/tmp
 ultimate/workspace.xml
 ultimate/*.versionsBackup
 *.class
-
