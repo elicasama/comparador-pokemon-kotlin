@@ -5,7 +5,7 @@ import java.io.BufferedReader
 import java.io.FileReader
 
 /**
- * Clase que se utiliza para evitar acceder a la api online
+ * Retorna un objeto [pokemon] dado el [pokemonName].
  */
 class PokedexOffline()  {
     val gson = Gson()
@@ -17,13 +17,6 @@ class PokedexOffline()  {
         var pokemonBuffer = BufferedReader(FileReader("./src/main/java/JSON/$pokemonName.json"))
         var pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
         return pokemonParseado
-    }
-
-    /**
-     * Devuelve el total de estadísticas del [pokemon]
-     */
-    fun getTotalStat(pokemon: Pokemon): Double {
-         return pokemon.stats.sumByDouble { it.base_stat }
     }
 }
 

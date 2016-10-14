@@ -1,5 +1,6 @@
 import domain.PokedexOffline
 import domain.PokemonComparator
+import domain.Pokemon
 
 fun main(args: Array<String>) {
 
@@ -25,8 +26,8 @@ fun main(args: Array<String>) {
     println("--------------------------------------------------------------------------")
 
 
-    val statPoke1 = pokedex.getTotalStat(poke1)
-    val statPoke2 = pokedex.getTotalStat(poke2)
+    val statPoke1 = Pokemon().getTotalStat(poke1)
+    val statPoke2 = Pokemon().getTotalStat(poke2)
 
     println("El stat de ${poke1.name} es  ${statPoke1}")
     println("El stat de ${poke2.name} es  ${statPoke2}")
@@ -36,6 +37,6 @@ fun main(args: Array<String>) {
      */
     val pokeCampeonByStat = PokemonComparator(nombrePoke1,nombrePoke2).byTotalStat()
     println("--------------------------------------------------------------------------")
-    println("El pokemon campeón, con mayor stat es: ${pokeCampeonByStat.name} con ${pokedex.getTotalStat(pokeCampeonByStat)}")
+    println("El pokemon campeón, con mayor stat es: ${pokeCampeonByStat.name} con ${Pokemon().getTotalStat(pokeCampeonByStat)}")
     println("--------------------------------------------------------------------------")
 }

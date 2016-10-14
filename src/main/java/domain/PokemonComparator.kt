@@ -1,5 +1,7 @@
 package domain
 
+import domain.Pokemon
+
 /**
  * La clase recibe los nombres de los [pokemon] a comparar
  * Permite comparar 2 pokemon por los siguientes criterios:
@@ -24,7 +26,7 @@ class PokemonComparator (poke1Name: String, poke2Name: String) {
      * Compara al [pokemon] según su estadística total
      */
     fun byTotalStat(): Pokemon {
-        if (PokedexOffline().getTotalStat(this.poke1) >= PokedexOffline().getTotalStat(this.poke2))
+        if (Pokemon().getTotalStat(this.poke1) >= Pokemon().getTotalStat(this.poke2))
             return poke1
         else
             return poke2
