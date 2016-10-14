@@ -8,8 +8,8 @@ fun main(args: Array<String>) {
     val nombrePoke1 = "charmander"
     val nombrePoke2 = "pikachu"
 
-    val poke1 = PokedexOffline().getPokemonByName(nombrePoke1)
-    val poke2 = PokedexOffline().getPokemonByName(nombrePoke2)
+    val poke1 = pokedex.getPokemonByName(nombrePoke1)
+    val poke2 = pokedex.getPokemonByName(nombrePoke2)
 
     /**
      * Presentación de los competidores

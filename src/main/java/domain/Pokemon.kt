@@ -1,6 +1,5 @@
 package domain
 
-import domain.Stat
 import java.util.*
 
 /**
