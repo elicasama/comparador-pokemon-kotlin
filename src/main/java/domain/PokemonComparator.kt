@@ -10,17 +10,18 @@ class PokemonComparator (poke1Name: String, poke2Name: String) {
     private val poke2 = pokedex.getPokemonByName(poke2Name)
 
     /**
-     * Compara al [pokemon] según su base de experiencia
+     * Compara al [Pokemon] según su base de experiencia
      */
     fun byBaseExperience(): Pokemon {
         if (this.poke1.base_experience >= this.poke2.base_experience)
             return this.poke1
-        else
+        else {
             return this.poke2
+        }
     }
 
     /**
-     * Compara al [pokemon] según su estadística total.
+     * Compara al [Pokemon] según su estadística total.
      */
     fun byTotalStat(): Pokemon {
         if (this.poke1.getTotalStat() >= this.poke2.getTotalStat())

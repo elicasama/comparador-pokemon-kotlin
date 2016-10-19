@@ -11,11 +11,11 @@ class PokedexOffline()  {
     private val gson = Gson()
 
     /**
-     * Dado un pokedexParseado busca el archivo JSON y retorna el pokemon que coincide.
+     * Retorna un [Pokemon] dado el pokemonName.
      */
     fun getPokemonByName(pokemonName: String): Pokemon {
-        var pokemonBuffer = BufferedReader(FileReader("./src/main/java/JSON/$pokemonName.json"))
-        var pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
+        val pokemonBuffer = BufferedReader(FileReader("./src/main/java/JSON/$pokemonName.json"))
+        val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
         return pokemonParseado
     }
 }

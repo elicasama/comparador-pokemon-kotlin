@@ -1,7 +1,7 @@
 package domain
 
 /**
- * Estadística del pokemon
+ * Estadística del [Pokemon]
  */
 class Stat () {
     lateinit var name: String
