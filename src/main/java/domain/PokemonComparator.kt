@@ -1,13 +1,12 @@
 package domain
 
 /**
- * Recibe los nombres de los pokemons a comparar.
+ * Recibe las instancias de [Pokemon] a comparar.
  * Permite comparar 2 pokemon por distintos criterios.
  */
-class PokemonComparator (poke1Name: String, poke2Name: String) {
-    private val pokedex = PokedexOffline()
-    private val poke1 = pokedex.getPokemonByName(poke1Name)
-    private val poke2 = pokedex.getPokemonByName(poke2Name)
+class PokemonComparator (poke1: Pokemon, poke2: Pokemon) {
+    private val poke1 = poke1
+    private val poke2 = poke2
 
     /**
      * Compara al [Pokemon] según su base de experiencia

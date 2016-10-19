@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     /**
      * Comparación por base de experiencia
      */
-    val superPoke = PokemonComparator(nombrePoke1,nombrePoke2).byBaseExperience()
+    val superPoke = PokemonComparator(poke1,poke2).byBaseExperience()
     println("El ganador por base de experiencia es: ${superPoke.name} con ${superPoke.base_experience}")
     println("--------------------------------------------------------------------------")
 
@@ -35,7 +35,7 @@ fun main(args: Array<String>) {
     /**
      * Comparación por el valor total de las estadísticas del [pokemon]
      */
-    val pokeCampeonByStat = PokemonComparator(nombrePoke1,nombrePoke2).byTotalStat()
+    val pokeCampeonByStat = PokemonComparator(poke2, poke1).byTotalStat()
     println("--------------------------------------------------------------------------")
     println("El pokemon campeón, con mayor stat es: ${pokeCampeonByStat.name} con ${pokeCampeonByStat.getTotalStat()}")
     println("--------------------------------------------------------------------------")
