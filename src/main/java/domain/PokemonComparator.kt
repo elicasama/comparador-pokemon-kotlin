@@ -6,7 +6,6 @@ package domain
  */
 class PokemonComparator (poke1Name: String, poke2Name: String) {
     private val pokedex = PokedexOffline()
-    private val pokemon = Pokemon()
     private val poke1 = pokedex.getPokemonByName(poke1Name)
     private val poke2 = pokedex.getPokemonByName(poke2Name)
 
