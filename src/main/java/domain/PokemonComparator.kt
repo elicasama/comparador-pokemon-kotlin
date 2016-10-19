@@ -24,7 +24,7 @@ class PokemonComparator (poke1Name: String, poke2Name: String) {
      * Compara al [pokemon] según su estadística total.
      */
     fun byTotalStat(): Pokemon {
-        if (pokemon.getTotalStat(this.poke1) >= pokemon.getTotalStat(this.poke2))
+        if (this.poke1.getTotalStat() >= this.poke2.getTotalStat())
             return this.poke1
         else
             return this.poke2

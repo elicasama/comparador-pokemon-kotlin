@@ -3,7 +3,8 @@ package domain
 import java.util.*
 
 /**
- * Clase Pokemon, se va a instanciar con un JSON
+ * Modelado de un [Pokemon]
+ * Permite calcular la estadística total de un pokemon
  */
 class Pokemon () {
     var id = 0
@@ -14,7 +15,7 @@ class Pokemon () {
     /**
      * Devuelve el total de estadísticas del [pokemon]
      */
-    fun getTotalStat(pokemon: Pokemon): Double {
-        return pokemon.stats.sumByDouble { it.base_stat }
+    fun getTotalStat(): Double {
+        return this.stats.sumByDouble { it.base_stat }
     }
 }

@@ -23,3 +23,5 @@ ultimate/tmp
 ultimate/workspace.xml
 ultimate/*.versionsBackup
 *.class
+src/main/resources/
+src/test/
