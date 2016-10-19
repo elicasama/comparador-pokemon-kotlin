@@ -1,31 +1,30 @@
 package domain
 
+import java.util.*
+
 /**
- * Recibe las instancias de [Pokemon] a comparar.
- * Permite comparar 2 pokemon por distintos criterios.
+ * Recibe un array de instancias de [Pokemon] a comparar.
+ * Permite comparar a los [Pokemon] por distintos criterios.
  */
-class PokemonComparator (poke1: Pokemon, poke2: Pokemon) {
-    private val poke1 = poke1
-    private val poke2 = poke2
+class PokemonComparator ( pokemonsAComparar: ArrayList<Pokemon>) {
+    private val pokemons = pokemonsAComparar
+    /**
+     * TODO: Sigue existiendo lógica repetida, analizar pasar el criterio por parametro
+     */
 
     /**
      * Compara al [Pokemon] según su base de experiencia
      */
-    fun byBaseExperience(): Pokemon {
-        if (this.poke1.base_experience >= this.poke2.base_experience)
-            return this.poke1
-        else {
-            return this.poke2
-        }
+    fun byBaseExperience() : Pokemon? {
+        return this.pokemons.maxBy { it.base_experience }
+
     }
 
     /**
      * Compara al [Pokemon] según su estadística total.
      */
-    fun byTotalStat(): Pokemon {
-        if (this.poke1.getTotalStat() >= this.poke2.getTotalStat())
-            return this.poke1
-        else
-            return this.poke2
+    fun byTotalStat(): Pokemon? {
+        return this.pokemons.maxBy { it.getTotalStat() }
     }
 }
+
