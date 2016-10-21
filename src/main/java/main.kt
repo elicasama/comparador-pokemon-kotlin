@@ -4,7 +4,6 @@ import domain.Pokemon
 import java.util.*
 
 fun main(args: Array<String>) {
-
     /**
      * TODO: La generación del array de [Pokemon] tiene que generarse en base a un array de nombres de pokemon
      */
@@ -29,9 +28,8 @@ fun main(args: Array<String>) {
      * Comparación por base de experiencia
      */
     val superPoke = PokemonComparator(arrayListOf(poke1,poke2,poke3)).byBaseExperience()
-    println("El ganador por base de experiencia es: ${superPoke!!.name} con ${superPoke.base_experience}")
+    println("El ganador por base de experiencia es: ${superPoke.name} con ${superPoke.base_experience}")
     println("--------------------------------------------------------------------------")
-
 
     val statPoke1 = poke1.getTotalStat()
     val statPoke2 = poke2.getTotalStat()
@@ -46,6 +44,15 @@ fun main(args: Array<String>) {
      */
     val pokeCampeonByStat = PokemonComparator(arrayListOf(poke1,poke2,poke3)).byTotalStat()
     println("--------------------------------------------------------------------------")
-    println("El pokemon campeón, con mayor stat es: ${pokeCampeonByStat!!.name} con ${pokeCampeonByStat.getTotalStat()}")
+    println("El pokemon campeón, con mayor stat es: ${pokeCampeonByStat.name} con ${pokeCampeonByStat.getTotalStat()}")
     println("--------------------------------------------------------------------------")
+
+    /**
+     * Comparación por criterio (ID)
+     */
+    println("--------------------------------------------------------------------------")
+    val superPokeByID = PokemonComparator(arrayListOf(poke1,poke2,poke3)).byCanon { poke -> poke.id.toDouble() }
+    println("El ID de ${superPokeByID.name} es  ${superPoke.id}")
+
+
 }
