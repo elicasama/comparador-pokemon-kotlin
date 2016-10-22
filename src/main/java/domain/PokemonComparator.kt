@@ -15,10 +15,6 @@ class PokemonComparator (pokemonsAComparar: List<Pokemon>) {
     }
 
     /**
-     * TODO: Sigue existiendo lógica repetida, analizar pasar el criterio por parametro
-     */
-
-    /**
      * Compara al [Pokemon] según su base de experiencia
      */
     fun byBaseExperience() : Pokemon {

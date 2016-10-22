@@ -22,7 +22,7 @@ class PokedexOffline()  {
     /**
      * Genera una lista de instancias de [Pokemon] a partir de una lista de nombres de pokemon
      */
-    fun crearPokemons (nombresDePokemon: List <String>) : List<Pokemon> {
+    fun getPokemonByNames (nombresDePokemon: List <String>) : List<Pokemon> {
         return  nombresDePokemon.map ({nombreDePoke -> getPokemonByName(nombreDePoke) })
     }
 }
