@@ -15,7 +15,7 @@ class PokemonComparator (pokemonsAComparar: List<Pokemon>) {
     }
 
     /**
-     * Compara al [Pokemon] según su base de experiencia
+     * Compara al [Pokemon] según su experiencia base
      */
     fun byBaseExperience() : Pokemon {
         return this.byCanon { poke -> poke.base_experience.toDouble() }

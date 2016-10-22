@@ -6,7 +6,7 @@ fun main(args: Array<String>) {
     val pokemons = pokedex.getPokemonByNames(listOf("kakuna","charmander","bulbasaur", "pikachu"))
 
     /**
-     * Comparación por base de experiencia
+     * Presentación de los particiapantes
      */
     println("-------------------------")
     val poke = pokemons.iterator()
@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     println("--------------------------------------------------------------------------")
 
     /**
-     * Comparación por base de experiencia
+     * Comparación por experiencia base
      */
     val superPoke = PokemonComparator(pokemons).byBaseExperience()
     println("--------------------------------------------------------------------------")
