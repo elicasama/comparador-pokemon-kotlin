@@ -3,15 +3,21 @@ import domain.PokemonComparator
 
 fun main(args: Array<String>) {
     val pokedex = PokedexOffline()
-    val pokemons = pokedex.crearPokemons(listOf("kakuna","charmander","bulbasaur"))
+    val pokemons = pokedex.crearPokemons(listOf("kakuna","charmander","bulbasaur", "pikachu"))
 
     /**
      * TODO: Presentación de los competidores
      */
 
+    println("--------------------------------------------------------------------------")
+    println("Los participantes son:")
+    pokemons.map ({poke -> println(" ${poke.name} con ID ${poke.id} y con experiencia ${poke.base_experience}")})
+    println("--------------------------------------------------------------------------")
+
     /**
      * Comparación por base de experiencia
      */
+
     val superPoke = PokemonComparator(pokemons).byBaseExperience()
     println("--------------------------------------------------------------------------")
     println("El ganador por base de experiencia es: ${superPoke.name} con ${superPoke.base_experience}")
