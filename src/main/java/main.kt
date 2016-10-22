@@ -8,10 +8,12 @@ fun main(args: Array<String>) {
     /**
      * Comparación por base de experiencia
      */
-
-    println("--------------------------------------------------------------------------")
+    println("-------------------------")
+    val poke = pokemons.iterator()
     println("Los participantes son:")
-    pokemons.map ({poke -> println(" ${poke.name} con ID ${poke.id} y con experiencia ${poke.base_experience}")})
+    println("-------------------------")
+    while (poke.hasNext())
+        System.out.println(poke.next().name)
     println("--------------------------------------------------------------------------")
 
     /**
