@@ -8,12 +8,16 @@ fun main(args: Array<String>) {
     /**
      * Presentación de los particiapantes
      */
-    println("-------------------------")
+    println("--------------------------------------------------------------------------")
     val poke = pokemons.iterator()
     println("Los participantes son:")
-    println("-------------------------")
-    while (poke.hasNext())
-        System.out.println(poke.next().name)
+    println("--------------------------------------------------------------------------")
+    pokemons.forEach {
+        poke -> println("${poke.name} " +
+            "con Id: ${poke.id}, " +
+            "Experiencia base: ${poke.base_experience}, " +
+            "y estadistica total: ${poke.getTotalStat()}")
+    }
     println("--------------------------------------------------------------------------")
 
     /**
