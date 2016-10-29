@@ -7,14 +7,14 @@ import java.io.FileReader
 /**
  * Retorna un [Pokemon] dado el [pokemonName].
  */
-class PokedexOffline()  {
+class PokedexOffline(private val ruta: String)  {
     private val gson = Gson()
 
     /**
      * Retorna un [Pokemon] dado el [pokemonName].
      */
     fun getPokemonByName(pokemonName: String): Pokemon {
-        val pokemonBuffer = BufferedReader(FileReader("./src/main/java/JSON/$pokemonName.json"))
+        val pokemonBuffer = BufferedReader(FileReader("$ruta/$pokemonName.json"))
         val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
         return pokemonParseado
     }

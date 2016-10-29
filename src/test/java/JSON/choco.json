@@ -1,0 +1,14 @@
+{
+  "id" : 30,
+  "name": "choco",
+  "base_experience": 120,
+  "stats": [
+    {
+      "base_stat": 45
+    },
+    {
+      "base_stat": 65
+    }
+  ]
+}
+
