@@ -5,7 +5,7 @@ import java.io.BufferedReader
 import java.io.FileReader
 
 /**
- * Retorna un [Pokemon] dado el [pokemonName].
+ * Retorna un [Pokemon] dado un nombre
  */
 class PokedexOffline(private val ruta: String)  {
     private val gson = Gson()

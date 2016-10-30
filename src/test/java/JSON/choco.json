@@ -4,10 +4,10 @@
   "base_experience": 120,
   "stats": [
     {
-      "base_stat": 45
+      "base_stat": 30
     },
     {
-      "base_stat": 65
+      "base_stat": 8
     }
   ]
 }

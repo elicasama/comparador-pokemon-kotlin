@@ -1,7 +1,5 @@
 package domain
 
-import java.util.*
-
 /**
  * Modelado de un [Pokemon]
  */
