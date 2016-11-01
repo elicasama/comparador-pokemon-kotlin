@@ -3,6 +3,10 @@ package domain
 import exceptions.SinSuficientesPokemon
 import helpers.PokemonCreator
 import org.junit.Test
+import org.junit.experimental.theories.DataPoint
+import org.junit.experimental.theories.Theories
+import org.junit.experimental.theories.Theory
+import org.junit.runner.RunWith
 import org.unitils.reflectionassert.ReflectionAssert
 import kotlin.test.assertFailsWith
 
@@ -40,10 +44,20 @@ class PokemonComparatorTest {
         )
     }
 
-    @Test
-    fun byBaseExperience_compara_con_pocos_pokes_tira_exception() {
-        val pocosPoke = listOf<Pokemon>(this.rodri)
-        assertFailsWith(SinSuficientesPokemon::class, { PokemonComparator(pocosPoke).byBaseExperience() })
+}
+
+@RunWith(Theories::class)
+class CuandoHayPocosPokemonTest() {
+    companion object {
+        @DataPoint @JvmField
+        val conNinguno = listOf<Pokemon>()
+
+        @DataPoint @JvmField
+        val conUno = listOf(Pokemon())
     }
 
+    @Theory
+    fun byBaseExperience_compara_con_pocos_pokes_tira_exception(pokemons: List<Pokemon>) {
+        assertFailsWith(SinSuficientesPokemon::class, { PokemonComparator(pokemons).byBaseExperience() })
+    }
 }
