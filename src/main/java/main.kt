@@ -2,7 +2,7 @@ import domain.PokedexOffline
 import domain.PokemonComparator
 
 fun main(args: Array<String>) {
-    val pokedex = PokedexOffline()
+    val pokedex = PokedexOffline("./src/main/java/JSON")
     val pokemons = pokedex.getPokemonByNames(listOf("kakuna","charmander","bulbasaur", "pikachu"))
 
     /**
