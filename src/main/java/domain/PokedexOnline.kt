@@ -1,6 +1,8 @@
 package domain
 
-import com.google.gson.Gson
+
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -8,29 +10,22 @@ import java.net.MalformedURLException
 import java.net.URL
 
 
-class PokedexOnline {
-
-}
 
 object PruebaHTTP {
     @JvmStatic fun main(args: Array<String>) {
-        val gson = Gson()
         try {
             // Se abre la conexión
-            val url = URL("https://pokeapi.co/api/v2/pokemon/1/")
+            val url = URL("http://www.chuidiang.com")
+            //val url = URL("https://pokeapi.co/api/v2/pokemon/1/")
             val conexion = url.openConnection()
             conexion.connect()
 
             // Lectura
-            val InputStream = conexion.getInputStream()
-            val OutputStream = conexion.outputStream()
-
-            val pokemonBuffer = BufferedReader(InputStreamReader(InputStream))
-            val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
-
-            println(pokemonParseado.name.toString())
-
-
+            val `is` = conexion.inputStream
+            val br = BufferedReader(InputStreamReader(`is`))
+            val buffer = CharArray(1000)
+            var leido= br.read(buffer)
+                println(String(buffer, 0, leido))
         } catch (e: MalformedURLException) {
             // TODO Auto-generated catch block
             e.printStackTrace()
@@ -41,5 +36,3 @@ object PruebaHTTP {
 
     }
 }
-
-
