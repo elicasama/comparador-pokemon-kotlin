@@ -1,9 +1,11 @@
-import domain.PokedexOffline
-import domain.PokemonComparator
+import domain.*
 
 fun main(args: Array<String>) {
-    val pokedex = PokedexOffline()
-    val pokemons = pokedex.getPokemonByNames(listOf("kakuna","charmander","bulbasaur", "pikachu"))
+   // val pokedex = PokedexOffline()
+    val pokedex = PokedexOnline()
+    //val pokemons = pokedex.getPokemonsByNames(listOf("kakuna","charmander","bulbasaur", "pikachu"))
+    val pokemons = pokedex.getPokemonsByNames(listOf("kakuna","charmander"))
+
 
     /**
      * Presentación de los particiapantes
