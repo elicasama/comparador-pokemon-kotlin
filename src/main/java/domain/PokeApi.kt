@@ -1,10 +1,12 @@
 package domain
 
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.GsonConverterFactory
 import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Path
+import java.util.concurrent.TimeUnit
 
 /**
  * API JSON de Pokemon hosteada en http://pokeapi.co
