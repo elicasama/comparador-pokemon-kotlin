@@ -15,7 +15,7 @@ interface PokeApi{
 
     companion object {
         fun new(): PokeApi {
-            val retrofit = Retrofit.Builder()
+            val retrofit = Retrofit.Builder()m
                     .baseUrl("https://pokeapi.co/api/v2/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()

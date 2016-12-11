@@ -7,8 +7,7 @@ import java.io.FileReader
 /**
  * Brinda información de los Pokemon de manera offline
  */
-class PokedexOffline() : Pokedex {
-
+class PokedexOffline(private val ruta: String) : Pokedex  {
     private val gson = Gson()
 
     /**

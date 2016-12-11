@@ -1,0 +1,13 @@
+{
+  "id" : 100,
+  "name": "rodri",
+  "base_experience": 121,
+  "stats": [
+    {
+      "base_stat": 45
+    },
+    {
+      "base_stat": 65
+    }
+  ]
+}

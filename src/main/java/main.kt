@@ -6,7 +6,6 @@ fun main(args: Array<String>) {
     //val pokemons = pokedex.getPokemonsByNames(listOf("kakuna","charmander","bulbasaur", "pikachu"))
     val pokemons = pokedex.getPokemonsByNames(listOf("kakuna","charmander"))
 
-
     /**
      * Presentación de los particiapantes
      */
