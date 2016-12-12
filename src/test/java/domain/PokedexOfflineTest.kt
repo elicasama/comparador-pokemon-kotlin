@@ -19,10 +19,10 @@ class PokedexOfflineTest {
     }
 
     @Test
-    fun getPokemonByNames_retorna_una_lista_de_Pokemon() {
+    fun getPokemonsByNames_retorna_una_lista_de_Pokemon() {
         ReflectionAssert.assertReflectionEquals(
             listOf(poke1, poke2),
-            this.pokedex.getPokemonByNames(listOf("rodri", "choco"))
+            this.pokedex.getPokemonsByNames(listOf("rodri", "choco"))
         )
     }
 

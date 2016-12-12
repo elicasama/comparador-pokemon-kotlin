@@ -1,7 +1,7 @@
 package domain
 
 /**
- * Created by Liz on 11/12/2016.
+ * Permite agrupar de manera abstracta las PokedexdexOnline y PokedexOffline.
  */
 interface Pokedex {
 

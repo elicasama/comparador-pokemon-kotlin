@@ -7,6 +7,7 @@ import exceptions.SinSuficientesPokemon
  * Permite comparar a los [Pokemon] por distintos criterios.
  */
 class PokemonComparator (pokemonsAComparar: List<Pokemon>) {
+
     private val pokemons = pokemonsAComparar
 
     init {
@@ -15,7 +16,7 @@ class PokemonComparator (pokemonsAComparar: List<Pokemon>) {
     }
 
     /**
-     * Compara al [Pokemon] según su experiencia base
+     * Compara al [Pokemon] según su experiencia base.
      */
     fun byBaseExperience() : Pokemon {
         return this.byCanon { poke -> poke.base_experience.toDouble() }
@@ -29,10 +30,11 @@ class PokemonComparator (pokemonsAComparar: List<Pokemon>) {
     }
 
     /**
-     * Compara al [Pokemon] por un criterio
+     * Compara al [Pokemon] por un criterio.
      */
     fun byCanon( criterio : (Pokemon) -> (Double)): Pokemon {
         return this.pokemons.maxBy(criterio)!!
     }
+
 }
 
