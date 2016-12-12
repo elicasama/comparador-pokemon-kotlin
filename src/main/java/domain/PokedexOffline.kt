@@ -1,28 +1,28 @@
 package domain
 
 import com.google.gson.Gson
+import exceptions.PokemonNoEncontrado
 import java.io.BufferedReader
 import java.io.FileReader
 
 /**
- * Retorna un [Pokemon] dado un nombre
+ * Brinda información de los Pokemon de manera offline.
  */
-class PokedexOffline(private val ruta: String)  {
+class PokedexOffline(private val ruta: String) : Pokedex  {
+
     private val gson = Gson()
 
     /**
-     * Retorna un [Pokemon] dado el [pokemonName].
+     * Retorna un [Pokemon] dado el [name].
      */
-    fun getPokemonByName(pokemonName: String): Pokemon {
-        val pokemonBuffer = BufferedReader(FileReader("$ruta/$pokemonName.json"))
-        val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
-        return pokemonParseado
-    }
+        override fun getPokemonByName(name: String): Pokemon {
+            try{
+                val pokemonBuffer = BufferedReader(FileReader("./src/main/java/JSON/$name.json"))
+                val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
+                return pokemonParseado
+            } catch (e: java.io.FileNotFoundException) {
+                throw PokemonNoEncontrado()
+            }
+        }
 
-    /**
-     * Genera una lista de instancias de [Pokemon] a partir de una lista de nombres de pokemon
-     */
-    fun getPokemonByNames (nombresDePokemon: List <String>) : List<Pokemon> {
-        return  nombresDePokemon.map ({nombreDePoke -> getPokemonByName(nombreDePoke) })
-    }
 }
