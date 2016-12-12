@@ -1,7 +1,7 @@
 package domain
 
 /**
- * Permite agrupar de manera abstracta las PokedexdexOnline y PokedexOffline.
+ * Indica los comportamientos que deben implementar todas las Pokedex.
  */
 interface Pokedex {
 
