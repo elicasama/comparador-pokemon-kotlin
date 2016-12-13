@@ -8,7 +8,7 @@ import java.io.FileReader
 /**
  * Brinda información de los Pokemon de manera offline.
  */
-class PokedexOffline(private val ruta: String) : Pokedex  {
+class PokedexOffline(private val path: String) : Pokedex  {
 
     private val gson = Gson()
 
@@ -17,7 +17,7 @@ class PokedexOffline(private val ruta: String) : Pokedex  {
      */
         override fun getPokemonByName(name: String): Pokemon {
             try{
-                val pokemonBuffer = BufferedReader(FileReader("./src/main/java/JSON/$name.json"))
+                val pokemonBuffer = BufferedReader(FileReader("$path/$name.json"))
                 val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
                 return pokemonParseado
             } catch (e: java.io.FileNotFoundException) {
