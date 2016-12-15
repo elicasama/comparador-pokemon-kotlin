@@ -5,21 +5,17 @@ fun main(args: Array<String>) {
     /**
      * Selección de Pokedex
      */
-    val pokedex = PokedexOffline("./src/main/java/JSON")
-//    val pokedex = PokedexOnline()
+   // val pokedex = PokedexOffline("./src/main/java/JSON")
+    val pokedex = PokedexOnline()
 
     /**
-     * Selección de grupo de pokemons a comparar
-     * TODO: generar un CLI para el ingreso de los pokemonName por parte del usuario
+     * Ingreso de nombres por parte del usuario
      */
-
-//    val pokemons = pokedex.getPokemonsByNames(listOf("kakuna","charmander","bulbasaur", "pikachu"))
-    val pokemons = pokedex.getPokemonsByNames(listOf("kakun","charmander"))
+    val pokemons = pokedex.getPokemonsByNames(CLI().getPokemonNames())
 
     /**
      * Presentación de los participantes
      */
-
     println("--------------------------------------------------------------------------")
     println("Los participantes son:")
     println("--------------------------------------------------------------------------")
