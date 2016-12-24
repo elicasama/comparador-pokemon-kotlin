@@ -21,7 +21,7 @@ class PokedexOffline(private val path: String) : Pokedex  {
                 val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
                 return pokemonParseado
             } catch (e: java.io.FileNotFoundException) {
-                throw PokemonNoEncontrado()
+                throw PokemonNoEncontrado(e.message)
             }
         }
 

@@ -32,7 +32,7 @@ class PokemonComparator (pokemonsAComparar: List<Pokemon>) {
     /**
      * Compara al [Pokemon] por un criterio.
      */
-    fun byCanon( criterio : (Pokemon) -> (Double)): Pokemon {
+    fun byCanon(criterio: (Pokemon) -> Double): Pokemon {
         return this.pokemons.maxBy(criterio)!!
     }
 

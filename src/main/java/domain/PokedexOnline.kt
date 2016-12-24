@@ -19,7 +19,7 @@ class PokedexOnline : Pokedex {
         } catch (e: java.net.SocketTimeoutException) {
             throw TiempoExcedido()
         } catch (e: java.lang.IllegalStateException){
-            throw PokemonNoEncontrado()
+            throw PokemonNoEncontrado(e.message)
         }
 
     }

@@ -1,36 +1,34 @@
 import java.util.Scanner
 
 /**
- * Permite la interacción usuario-programa por medio de ingreso de datos por consola
+ * Permite la interacción usuario-programa por medio del ingreso de datos por consola.
  */
 class CLI {
 
     /**
-     * Registra el ingreso por teclado
+     * Registra el ingreso por teclado.
      */
     fun consoleEntry(): String {
-        var consoleEntry = ""
         val userInput = Scanner(System.`in`)
-        consoleEntry = userInput.nextLine()
-        return consoleEntry
+        return userInput.nextLine()
     }
 
     /**
-     * Genera un array de nombres de pokemon en base al ingreso del usuario
+     * Devuelve un array de nombres de pokemon en base al ingreso del usuario.
      */
-    fun getPokemonNames():  List<String> {
-        println("Por favor introduzca los nombres de pokemon a comparar")
+    fun getPokemonNames(): List<String> {
+        println("Por favor introduzca los nombres de pokemon a comparar separados por espacios")
         println("Presione ENTER para terminar")
-        val namesEntry = this.consoleEntry()
-
-        println("Entrada recibida por teclado es: \"" + namesEntry + "\"")
-        var pokemonsNames = namesEntry.split(" ")
-
-        return pokemonsNames
+        return this.consoleEntry().split(" ")
+     }
+    /**
+     * Devuelve el criterio ingresado por el usuario para su evaluación.
+     */
+    fun getCriterio(): String {
+        println("Por favor introduzca el criterio de evaluación")
+        println("Presione ENTER para terminar")
+        return this.consoleEntry()
     }
+
 }
 
-
-
-
-//val reg = Regex("(?<=[!?])|(?=[!?])")
