@@ -15,6 +15,9 @@ fun main(args: Array<String>) {
     val pokemons = pokedex.getPokemonsByNames(CLI().getPokemonNames())
     val inputCriterioDelUsuario = CLI().getCriterio()
 
+    var classMethods = Methods().getMethods()
+
+
     /**
      * Presentación de los participantes
      */
