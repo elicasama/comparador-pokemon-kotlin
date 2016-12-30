@@ -1,6 +1,5 @@
-import com.google.gson.Gson
 import domain.*
-import extensions.evalAsJs
+import extensions.getMethodNames
 
 fun main(args: Array<String>) {
     /**
@@ -14,9 +13,13 @@ fun main(args: Array<String>) {
      */
     val pokemons = pokedex.getPokemonsByNames(CLI().getPokemonNames())
     val inputCriterioDelUsuario = CLI().getCriterio()
+    // PokemonComparator(pokemons).availableCanons().forEach(::println)
 
-    var classMethods = Methods().getMethods()
+    val comparator = PokemonComparator(pokemons)
+    val pokeGanador = comparator.useKnownCanon("byBaseExperience")
 
+    println("El ganador es ${pokeGanador.name}")
+    return
 
     /**
      * Presentación de los participantes
@@ -37,7 +40,7 @@ fun main(args: Array<String>) {
      */
     println("--------------------------------------------------------------------------")
     val criterio: (Pokemon) -> (Double) = CriterioBuilder.byUserInput(inputCriterioDelUsuario)
-    val superPokeByCanon = PokemonComparator(pokemons).byCanon(criterio)
+    val superPokeByCanon = PokemonComparator(pokemons).useCustomCanon(criterio)
     println("El poke vencedor es ${superPokeByCanon.name} con valor ${criterio(superPokeByCanon)}")
     println("--------------------------------------------------------------------------")
 
@@ -61,7 +64,7 @@ fun main(args: Array<String>) {
      * Comparación por criterio (ID)
      */
     println("--------------------------------------------------------------------------")
-    val superPokeByID = PokemonComparator(pokemons).byCanon { poke -> poke.id.toDouble() }
+    val superPokeByID = PokemonComparator(pokemons).useCustomCanon { poke -> poke.id.toDouble() }
     println("El poke con mayor ID es ${superPokeByID.name} con id  ${superPoke.id}")
     println("--------------------------------------------------------------------------")
 

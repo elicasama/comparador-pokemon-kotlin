@@ -40,7 +40,7 @@ class PokemonComparatorTest {
     fun byCanon_compara_por_Id_rodri_100_choco_30_luna_5_gana_rodri() {
         ReflectionAssert.assertReflectionEquals(
                 this.rodri,
-                PokemonComparator(this.pokemons).byCanon {poke -> poke.id.toDouble()}
+                PokemonComparator(this.pokemons).useCustomCanon { poke -> poke.id.toDouble()}
         )
     }
 

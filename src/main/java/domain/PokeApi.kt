@@ -15,6 +15,7 @@ interface PokeApi{
     @GET("pokemon/{name}")
     fun getPokemonByName(@Path("name") name: String): Call<Pokemon>
 
+    // Dentro del companion object se declaran todos los métodos de clase
     companion object {
         fun new(): PokeApi {
             val retrofit = Retrofit.Builder()
