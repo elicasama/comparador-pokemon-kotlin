@@ -8,7 +8,7 @@ class CLI {
     /**
      * Registra el ingreso por teclado.
      */
-    fun consoleEntry(): String {
+    fun getConsoleEntry(): String {
         val userInput = Scanner(System.`in`)
         return userInput.nextLine()
     }
@@ -17,18 +17,8 @@ class CLI {
      * Devuelve un array de nombres de pokemon en base al ingreso del usuario.
      */
     fun getPokemonNames(): List<String> {
-        println("Por favor introduzca los nombres de pokemon a comparar separados por espacios")
-        println("Presione ENTER para terminar")
-        return this.consoleEntry().split(" ")
+        return this.getConsoleEntry().split(" ")
      }
-    /**
-     * Devuelve el criterio ingresado por el usuario para su evaluación.
-     */
-    fun getCriterio(): String {
-        println("Por favor introduzca el criterio de evaluación")
-        println("Presione ENTER para terminar")
-        return this.consoleEntry()
-    }
 
 }
 

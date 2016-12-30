@@ -1,5 +1,6 @@
 package domain
 
+import exceptions.MetodoNoEncontrado
 import exceptions.SinSuficientesPokemon
 import extensions.getMethodNames
 import extensions.invokeMethod
@@ -36,7 +37,11 @@ class PokemonComparator(pokemonsAComparar: List<Pokemon>) {
      * Compara al [Pokemon] según el nombre de uno de los métodos byXXX.
      */
     fun useKnownCanon(canonName: String): Pokemon {
-        return this.invokeMethod<Pokemon>(canonName)
+        try {
+            return this.invokeMethod<Pokemon>(canonName)
+        }catch (e: java.lang.NoSuchMethodException ){
+            throw MetodoNoEncontrado(e.message)
+        }
     }
 
     /**
