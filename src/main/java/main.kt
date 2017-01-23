@@ -14,21 +14,24 @@ fun main(args: Array<String>) {
     val pokemons = pokedex.getPokemonsByNames(CLI().getPokemonNames())
     val comparator = PokemonComparator(pokemons)
 
-    println("--------------------------------------------------------------------------")
-    print("Los criterios para compararlos son: \n")
-    println("--------------------------------------------------------------------------")
-    PokemonComparator(pokemons).availableCanons().forEach(::println)
-    println("\n")
-    println("Por favor introduzca introduzca el criterio de evaluación")
-    println("Presione ENTER para terminar")
-    println("--------------------------------------------------------------------------")
+//    println("--------------------------------------------------------------------------")
+//    print("Los criterios para compararlos son: \n")
+//    println("--------------------------------------------------------------------------")
+//    PokemonComparator(pokemons).availableCanons().forEach(::println)
+//    println("\n")
+//    println("Por favor introduzca el criterio de evaluación")
+//    println("Presione ENTER para terminar")
+//    println("--------------------------------------------------------------------------")
+//
+//    val inputCriterioDelUsuario = CLI().getConsoleEntry()
+//    println("\n")
+//    println("--------------------------------------------------------------------------")
+//    val pokeGanador = comparator.useKnownCanon(inputCriterioDelUsuario)
+//    println("El ganador es: \n ---> ${pokeGanador.name}")
+//    println("--------------------------------------------------------------------------")
 
-    val inputCriterioDelUsuario = CLI().getConsoleEntry()
-    println("\n")
-    println("--------------------------------------------------------------------------")
-    val pokeGanador = comparator.useKnownCanon(inputCriterioDelUsuario)
-    println("El ganador es: \n ---> ${pokeGanador.name}")
-    println("--------------------------------------------------------------------------")
+    Options(comparator.availableCanons()).getMapOfOptions().forEach(::println)
+    Options(comparator.availableCanons()).printMap()
 
     return
 

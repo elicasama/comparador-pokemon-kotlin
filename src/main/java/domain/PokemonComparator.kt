@@ -57,5 +57,6 @@ class PokemonComparator(pokemonsAComparar: List<Pokemon>) {
     fun availableCanons(): List<String> {
        return this.javaClass.getMethodNames().filter { it.startsWith("by") }
     }
+
 }
 
