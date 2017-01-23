@@ -30,9 +30,7 @@ fun main(args: Array<String>) {
 //    println("El ganador es: \n ---> ${pokeGanador.name}")
 //    println("--------------------------------------------------------------------------")
 
-    Options(comparator.availableCanons()).getMapOfOptions().forEach(::println)
-    Options(comparator.availableCanons()).printMap()
+    OptionsMenu(comparator.availableCanons()).printOptions()
 
     return
-
 }
