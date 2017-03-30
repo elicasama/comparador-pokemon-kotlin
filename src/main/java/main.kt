@@ -11,26 +11,11 @@ fun main(args: Array<String>) {
     println("Por favor introduzca los nombres de pokemon a comparar separados por espacios")
     println("Presione ENTER para terminar")
     println("--------------------------------------------------------------------------")
-    val pokemons = pokedex.getPokemonsByNames(CLI().getPokemonNames())
+    val cli = CLI()
+    val pokemons = pokedex.getPokemonsByNames(cli.getPokemonNames())
     val comparator = PokemonComparator(pokemons)
 
-//    println("--------------------------------------------------------------------------")
-//    print("Los criterios para compararlos son: \n")
-//    println("--------------------------------------------------------------------------")
-//    PokemonComparator(pokemons).availableCanons().forEach(::println)
-//    println("\n")
-//    println("Por favor introduzca el criterio de evaluación")
-//    println("Presione ENTER para terminar")
-//    println("--------------------------------------------------------------------------")
-//
-//    val inputCriterioDelUsuario = CLI().getConsoleEntry()
-//    println("\n")
-//    println("--------------------------------------------------------------------------")
-//    val pokeGanador = comparator.useKnownCanon(inputCriterioDelUsuario)
-//    println("El ganador es: \n ---> ${pokeGanador.name}")
-//    println("--------------------------------------------------------------------------")
-
-    OptionsMenu(comparator.availableCanons()).printOptions()
+    cli.startComparition(comparator)
 
     return
 }

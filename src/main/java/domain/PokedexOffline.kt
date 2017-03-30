@@ -15,14 +15,14 @@ class PokedexOffline(private val path: String) : Pokedex  {
     /**
      * Retorna un [Pokemon] dado el [name].
      */
-        override fun getPokemonByName(name: String): Pokemon {
-            try{
-                val pokemonBuffer = BufferedReader(FileReader("$path/$name.json"))
-                val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
-                return pokemonParseado
-            } catch (e: java.io.FileNotFoundException) {
-                throw PokemonNoEncontrado(e.message)
-            }
+    override fun getPokemonByName(name: String): Pokemon {
+        try {
+            val pokemonBuffer = BufferedReader(FileReader("$path/$name.json"))
+            val pokemonParseado = gson.fromJson(pokemonBuffer, Pokemon::class.java)
+            return pokemonParseado
+        } catch (e: java.io.FileNotFoundException) {
+            throw PokemonNoEncontrado(e.message)
         }
+    }
 
 }

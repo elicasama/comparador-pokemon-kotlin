@@ -21,6 +21,5 @@ class PokedexOnline : Pokedex {
         } catch (e: java.lang.IllegalStateException){
             throw PokemonNoEncontrado(e.message)
         }
-
     }
 }

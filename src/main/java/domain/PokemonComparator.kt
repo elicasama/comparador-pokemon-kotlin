@@ -39,7 +39,7 @@ class PokemonComparator(pokemonsAComparar: List<Pokemon>) {
     fun useKnownCanon(canonName: String): Pokemon {
         try {
             return this.invokeMethod<Pokemon>(canonName)
-        }catch (e: java.lang.NoSuchMethodException ){
+        } catch (e: java.lang.NoSuchMethodException ){
             throw MetodoNoEncontrado(e.message)
         }
     }
