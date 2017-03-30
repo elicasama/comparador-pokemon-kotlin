@@ -32,6 +32,7 @@ class CLI {
         val criterio = CanonMenu(comparator.availableCanons()).askCanon()
 
         val pokeGanador = criterio.run(comparator)
+        // Acá decimos que CustomCanon y KnownCanon son polimórficos respecto al mensaje `run(comparator)`
 
         println("El ganador es: \n ---> ${pokeGanador.name}")
         println("--------------------------------------------------------------------------")
