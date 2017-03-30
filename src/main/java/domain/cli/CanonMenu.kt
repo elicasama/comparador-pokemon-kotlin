@@ -1,6 +1,8 @@
 package domain
 
-import domain.cli.CriterioInfo
+import domain.cli.Canon
+import domain.cli.KnownCanon
+import domain.cli.CustomCanon
 import extensions.asIndexedMap
 
 /**
@@ -12,26 +14,25 @@ class CanonMenu(canons: List<String>) {
     /**
      * Le pregunta el criterio a usar
      */
-    fun askCanon(): CriterioInfo {
+    fun askCanon(): Canon {
         println("Ingrese el número de opción:")
         this.printCanons()
 
         val selectedOption = CLI.getConsoleEntry()
         try {
-            return CriterioInfo(
+            return KnownCanon(
                     this.canons[selectedOption.toInt()] ?: throw NumberFormatException()
-                    , "known"
             )
         } catch(e: NumberFormatException) {
             return this.askJsFunction()
         }
     }
 
-    private fun askJsFunction(): CriterioInfo {
+    private fun askJsFunction(): Canon {
         println("Por favor introduzca el criterio de evaluación")
         println("Presione ENTER para terminar")
         val jsFunction = CLI.getConsoleEntry()
-        return CriterioInfo(jsFunction, "custom")
+        return CustomCanon(jsFunction)
     }
 
     /**

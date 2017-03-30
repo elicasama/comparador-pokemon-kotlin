@@ -29,14 +29,9 @@ class CLI {
      * Le pregunta al usuario el criterio y lo usa.
      */
     fun startComparition(comparator: PokemonComparator) {
-        val criterioInfo = CanonMenu(comparator.availableCanons()).askCanon()
+        val criterio = CanonMenu(comparator.availableCanons()).askCanon()
 
-        val pokeGanador =
-                if (criterioInfo.type == "known") {
-                    comparator.useKnownCanon(criterioInfo.data)
-                } else {
-                    comparator.useCustomCanon(CriterioBuilder.byUserInput(criterioInfo.data))
-                }
+        val pokeGanador = criterio.run(comparator)
 
         println("El ganador es: \n ---> ${pokeGanador.name}")
         println("--------------------------------------------------------------------------")
